@@ -2,7 +2,7 @@
 
 Project created for inżynieria oprogramowania classes.
 
-## [Roles in project](https://docs.google.com/document/d/1_Me1DV7neLk6Ud_j5XST-bqS6h4B2WAujQYd-JZ2CtU/edit)
+## [Roles in the project](https://docs.google.com/document/d/1_Me1DV7neLk6Ud_j5XST-bqS6h4B2WAujQYd-JZ2CtU/edit)
 
 <b>Project Manager</b>:<br/>
 Barbara Skalik
@@ -40,7 +40,7 @@ Mateusz Konofał
 Bartosz Ignasiak
 
 <b>System tester</b>:<br/>
-Polevara Veronika
+Polevara Veronika <br/>
 Wiktor Dudek
 
 <b>Implementator</b>:<br/>
