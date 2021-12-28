@@ -74,7 +74,3 @@ In your browser go to http://localhost:8080/api/employees. You should see a resp
 We use Swagger 2 as REST API documentation tool.
 
 To view all endpoints go to http://localhost:8080/swagger-ui.html
-
-## Authors
-- Angelika Iskra
-- ... add yourselves here :)

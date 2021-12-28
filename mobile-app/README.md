@@ -26,21 +26,21 @@ A step by step series of examples that tell you how to get a development env run
 
 3. Go to project subfolder (\sparrista\app)
    ```batch
-   \> cd sparrista/app
+   \> cd sparrista/mobile-app
    ```
 
 4. Download modules
    ```batch
-   \sparrista\app> npm install
+   \sparrista\mobile-app> npm install
    ```
 
 5. Start a development server
    ```batch
-   \sparrista\app> npm start
+   \sparrista\mobile-app> npm start
    ```
    or
    ```batch
-   \sparrista\app> expo start
+   \sparrista\mobile-app> expo start
    ```
 
 6. Install Expo app from Google Play and connect to the same wireless network as your computer. 
@@ -74,9 +74,5 @@ If the checkboxes are grayed out, you will have a chance to install these compon
 
 6. Start an app on emulator
    ```batch
-   \sparrista\app> npm run android
+   \sparrista\mobile-app> npm run android
    ```
-   
-## Authors
-- Angelika Iskra
-- ... add yourselves here :)
