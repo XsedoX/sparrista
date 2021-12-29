@@ -32,9 +32,9 @@ MONGO_URI=<connectiong_string_do_mongodb>
 DISCORD_KEY=<token_dla_bota>
 ```
 
-> > [Skąd wziąść token dla bota?](https://youtu.be/SPTfmiYiuok?t=1041)
+> [Skąd wziąść token dla bota?](https://youtu.be/SPTfmiYiuok?t=1041)
 
-> > Jak uruchomić bazę danych MongoDB? Za pomocą [Dockera](https://hub.docker.com/_/mongo) lub można wykorzystać [oficjalną chmurę MongoDB](https://www.mongodb.com/). (darmowa dla naszych potrzeb, bez podawania kart!)
+> Jak uruchomić bazę danych MongoDB? Za pomocą [Dockera](https://hub.docker.com/_/mongo) lub można wykorzystać [oficjalną chmurę MongoDB](https://www.mongodb.com/). (darmowa dla naszych potrzeb, bez podawania kart!)
 
 Po dodaniu zmiennych środowiskowych:
 
