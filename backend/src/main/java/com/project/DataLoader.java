@@ -1,5 +1,8 @@
 package com.project;
 
+import com.project.Coffee.Coffee;
+import com.project.Coffee.CoffeePreparationDifficulty;
+import com.project.Coffee.CoffeeServiceImpl;
 import com.project.employee.Employee;
 import com.project.employee.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +13,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class DataLoader implements ApplicationRunner {
 
-    private EmployeeRepository employeeRepository;
+    private final EmployeeRepository employeeRepository;
+
+    @Autowired
+    private CoffeeServiceImpl coffeeService;
 
     @Autowired
     public DataLoader(EmployeeRepository employeeRepository) {
@@ -35,5 +41,14 @@ public class DataLoader implements ApplicationRunner {
         employeeRepository.save(new Employee("Cory", "Wilson", "Opally", "https://picsum.photos/200/300"));
         employeeRepository.save(new Employee("Vickie", "Harrison", "GrownMan", "https://picsum.photos/200/300"));
         employeeRepository.save(new Employee("Mabel", "Castro", "BatBoy", "https://picsum.photos/200/300"));
+
+
+        Coffee coffee = new Coffee("nowa", "cos tam", "dawda", "dawda", CoffeePreparationDifficulty.EASY, 3);
+        coffee.setPopularity(5);
+        coffeeService.save(coffee);
+        coffee = new Coffee("dawawaw", "cos tam", "dawda", "dawda", CoffeePreparationDifficulty.EASY, 3);
+        coffee.setPopularity(1);
+        coffeeService.save(coffee);
+
     }
 }
