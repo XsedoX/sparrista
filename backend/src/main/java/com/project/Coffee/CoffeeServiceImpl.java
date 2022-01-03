@@ -1,8 +1,6 @@
 package com.project.Coffee;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -15,8 +13,8 @@ public class CoffeeServiceImpl implements CoffeeService {
     private CoffeeRepository coffeeRepository;
 
     @Override
-    public ResponseEntity<String> save(Coffee coffee) {
-        return new ResponseEntity<>("Zapisano", HttpStatus.OK);
+    public Coffee save(Coffee coffee) {
+        return coffeeRepository.save(coffee);
     }
 
     @Override
