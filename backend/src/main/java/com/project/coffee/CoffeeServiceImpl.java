@@ -13,8 +13,8 @@ public class CoffeeServiceImpl implements CoffeeService {
     private CoffeeRepository coffeeRepository;
 
     @Override
-    public Coffee save(Coffee coffee) {
-        return coffeeRepository.save(coffee);
+    public void save(Coffee coffee) {
+        coffeeRepository.save(coffee);
     }
 
     @Override
