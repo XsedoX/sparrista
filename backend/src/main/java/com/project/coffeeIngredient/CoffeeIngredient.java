@@ -1,10 +1,9 @@
 package com.project.coffeeIngredient;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import com.project.coffee.Coffee;
+
+import javax.persistence.*;
 
 @Entity
 public class CoffeeIngredient {
@@ -13,6 +12,10 @@ public class CoffeeIngredient {
     @GeneratedValue
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "coffee_id")
+    private Coffee coffee;
+
     private String description;
     private String unitOfMeasure;
     private int amount;
@@ -20,7 +23,13 @@ public class CoffeeIngredient {
     public CoffeeIngredient() {
     }
 
+    public Coffee getCoffee() {
+        return coffee;
+    }
 
+    public void setCoffee(Coffee coffee) {
+        this.coffee = coffee;
+    }
 
     public String getDescription() {
         return description;

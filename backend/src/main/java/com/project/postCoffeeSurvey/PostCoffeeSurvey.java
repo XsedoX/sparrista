@@ -1,11 +1,11 @@
 package com.project.postCoffeeSurvey;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import java.time.LocalDateTime;
+import com.project.coffee.Coffee;
+import com.project.employee.Employee;
+
+import javax.persistence.*;
+import java.time.ZonedDateTime;
 
 @Entity
 public class PostCoffeeSurvey {
@@ -14,9 +14,32 @@ public class PostCoffeeSurvey {
     @GeneratedValue
     private Long id;
     private SurveyResult surveyResult;
-    private LocalDateTime submittedAt;
+    private ZonedDateTime submittedAt;
+
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
+
+    @OneToOne
+    private Coffee coffee;
 
     public PostCoffeeSurvey() {
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public Coffee getCoffee() {
+        return coffee;
+    }
+
+    public void setCoffee(Coffee coffee) {
+        this.coffee = coffee;
     }
 
     public SurveyResult getSurveyResult() {
@@ -27,11 +50,11 @@ public class PostCoffeeSurvey {
         this.surveyResult = surveyResult;
     }
 
-    public LocalDateTime getSubmittedAt() {
+    public ZonedDateTime getSubmittedAt() {
         return submittedAt;
     }
 
-    public void setSubmittedAt(LocalDateTime submittedAt) {
+    public void setSubmittedAt(ZonedDateTime submittedAt) {
         this.submittedAt = submittedAt;
     }
 

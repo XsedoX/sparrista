@@ -2,11 +2,11 @@ package com.project.drankCoffee;
 
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import java.time.LocalDateTime;
+import com.project.coffee.Coffee;
+import com.project.employee.Employee;
+
+import javax.persistence.*;
+import java.time.ZonedDateTime;
 
 @Entity
 public class DrankCoffee {
@@ -14,14 +14,39 @@ public class DrankCoffee {
     @Column(name = "id", nullable = false)
     @GeneratedValue
     private Long id;
+
     private int earnedPoints=0;
-    private LocalDateTime submittedAt;
+    private ZonedDateTime submittedAt;
+
+    @ManyToOne
+    @JoinColumn(name="coffee_id")
+    private Coffee coffee;
+
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
 
 
     public DrankCoffee() {
     }
 
 
+
+    public Coffee getCoffee() {
+        return coffee;
+    }
+
+    public void setCoffee(Coffee coffee) {
+        this.coffee = coffee;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
 
     public int getEarnedPoints() {
         return earnedPoints;
@@ -31,11 +56,11 @@ public class DrankCoffee {
         this.earnedPoints = earnedPoints;
     }
 
-    public LocalDateTime getSubmittedAt() {
+    public ZonedDateTime getSubmittedAt() {
         return submittedAt;
     }
 
-    public void setSubmittedAt(LocalDateTime submittedAt) {
+    public void setSubmittedAt(ZonedDateTime submittedAt) {
         this.submittedAt = submittedAt;
     }
 

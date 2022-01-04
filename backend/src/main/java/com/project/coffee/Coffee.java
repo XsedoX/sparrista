@@ -1,7 +1,14 @@
 package com.project.coffee;
 
 
+import com.project.coffeeIngredient.CoffeeIngredient;
+import com.project.coffeePreparationStep.CoffeePreparationStep;
+import com.project.drankCoffee.DrankCoffee;
+import com.project.postCoffeeSurvey.PostCoffeeSurvey;
+
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Coffee {
@@ -9,14 +16,28 @@ public class Coffee {
     @Column(name = "id", nullable = false)
     @GeneratedValue
     private Long id;
+
     private String title;
     private String coffeeDescription;
     private String preparationDescription;
     private String photoUrl;
     @Enumerated
     private CoffeePreparationDifficulty difficulty;
+
     private int preparationTime;
     private int popularity=0;
+
+    @OneToMany(mappedBy = "coffee")
+    private Set<DrankCoffee> drankCoffees;
+
+    @OneToOne
+    private PostCoffeeSurvey postCoffeeSurvey;
+
+    @OneToMany(mappedBy = "coffee")
+    private Set<CoffeeIngredient> coffeeIngredients;
+
+    @OneToMany(mappedBy = "coffee")
+    private List<CoffeePreparationStep> coffeePreparationSteps;
 
     public Coffee() {
     }
@@ -28,6 +49,38 @@ public class Coffee {
         this.photoUrl = photoUrl;
         this.difficulty = difficulty;
         this.preparationTime = preparationTime;
+    }
+
+    public PostCoffeeSurvey getPostCoffeeSurvey() {
+        return postCoffeeSurvey;
+    }
+
+    public void setPostCoffeeSurvey(PostCoffeeSurvey postCoffeeSurvey) {
+        this.postCoffeeSurvey = postCoffeeSurvey;
+    }
+
+    public Set<CoffeeIngredient> getCoffeeIngredients() {
+        return coffeeIngredients;
+    }
+
+    public void setCoffeeIngredients(Set<CoffeeIngredient> coffeeIngredients) {
+        this.coffeeIngredients = coffeeIngredients;
+    }
+
+    public List<CoffeePreparationStep> getCoffeePreparationSteps() {
+        return coffeePreparationSteps;
+    }
+
+    public void setCoffeePreparationSteps(List<CoffeePreparationStep> coffeePreparationSteps) {
+        this.coffeePreparationSteps = coffeePreparationSteps;
+    }
+
+    public Set<DrankCoffee> getDrankCoffees() {
+        return drankCoffees;
+    }
+
+    public void setDrankCoffees(Set<DrankCoffee> drankCoffees) {
+        this.drankCoffees = drankCoffees;
     }
 
     public Long getId() {

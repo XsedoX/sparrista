@@ -1,10 +1,9 @@
 package com.project.coffeePreparationStep;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import com.project.coffee.Coffee;
+
+import javax.persistence.*;
 
 @Entity
 public class CoffeePreparationStep {
@@ -12,10 +11,23 @@ public class CoffeePreparationStep {
     @Column(name = "id", nullable = false)
     @GeneratedValue
     private Long id;
+
     private int stepNumber;
     private String description;
 
+    @ManyToOne
+    @JoinColumn(name = "coffee_id")
+    private Coffee coffee;
+
     public CoffeePreparationStep() {
+    }
+
+    public Coffee getCoffee() {
+        return coffee;
+    }
+
+    public void setCoffee(Coffee coffee) {
+        this.coffee = coffee;
     }
 
     public int getStepNumber() {
