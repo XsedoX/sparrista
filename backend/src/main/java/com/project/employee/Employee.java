@@ -12,6 +12,7 @@ public class Employee {
     private String lastName;
     private String nickName;
     private String avatarUrl;
+    private Boolean isGuest=false;
 
     public Employee() {}
 
@@ -20,6 +21,14 @@ public class Employee {
         this.lastName = lastName;
         this.nickName = nickName;
         this.avatarUrl = avatarUrl;
+    }
+
+    public Boolean getGuest() {
+        return isGuest;
+    }
+
+    public void setGuest(Boolean guest) {
+        isGuest = guest;
     }
 
     public String getFirstName() {
