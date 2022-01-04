@@ -1,8 +1,13 @@
 package com.project.employee;
 
+import com.project.drankCoffee.DrankCoffee;
+import com.project.postCoffeeSurvey.PostCoffeeSurvey;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.Set;
 
 @Entity
 public class Employee {
@@ -12,6 +17,13 @@ public class Employee {
     private String lastName;
     private String nickName;
     private String avatarUrl;
+    private Boolean isGuest=false;
+
+    @OneToMany(mappedBy = "employee")
+    private Set<DrankCoffee> drankCoffees;
+
+    @OneToMany(mappedBy = "employee")
+    private Set<PostCoffeeSurvey> postCoffeeSurveys;
 
     public Employee() {}
 
@@ -20,6 +32,39 @@ public class Employee {
         this.lastName = lastName;
         this.nickName = nickName;
         this.avatarUrl = avatarUrl;
+    }
+
+
+    public Set<DrankCoffee> getDrankCoffees() {
+        return drankCoffees;
+    }
+
+    public void setDrankCoffees(Set<DrankCoffee> drankCoffees) {
+        this.drankCoffees = drankCoffees;
+    }
+
+    public Set<PostCoffeeSurvey> getPostCoffeeSurveys() {
+        return postCoffeeSurveys;
+    }
+
+    public void setPostCoffeeSurveys(Set<PostCoffeeSurvey> postCoffeeSurveys) {
+        this.postCoffeeSurveys = postCoffeeSurveys;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Boolean getGuest() {
+        return isGuest;
+    }
+
+    public void setGuest(Boolean guest) {
+        isGuest = guest;
     }
 
     public String getFirstName() {

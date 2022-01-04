@@ -1,4 +1,4 @@
-package com.project.Coffee;
+package com.project.coffee;
 
 public enum CoffeePreparationDifficulty {
     EASY,
