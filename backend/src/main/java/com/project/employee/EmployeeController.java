@@ -3,6 +3,7 @@ package com.project.employee;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -12,12 +13,12 @@ public class EmployeeController {
     @Autowired
     private EmployeeServiceImpl employeeService;
 
-    @GetMapping("/employees")
+    @GetMapping(value = "/employees", produces = MediaType.APPLICATION_JSON_VALUE)
     Iterable<Employee> all() {
         return employeeService.listAllEmployees();
     }
 
-    @GetMapping("/employees/{id}")
+    @GetMapping(value = "/employees/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     Employee one(@PathVariable Long id) {
 
         return employeeService.GetCoffeeById(id)
