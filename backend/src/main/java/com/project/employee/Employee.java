@@ -23,6 +23,14 @@ public class Employee {
         this.avatarUrl = avatarUrl;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public Boolean getGuest() {
         return isGuest;
     }
