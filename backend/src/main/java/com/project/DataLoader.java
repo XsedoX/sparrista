@@ -1,8 +1,8 @@
 package com.project;
 
-import com.project.Coffee.Coffee;
-import com.project.Coffee.CoffeePreparationDifficulty;
-import com.project.Coffee.CoffeeServiceImpl;
+import com.project.coffee.Coffee;
+import com.project.coffee.CoffeePreparationDifficulty;
+import com.project.coffee.CoffeeServiceImpl;
 import com.project.employee.Employee;
 import com.project.employee.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;

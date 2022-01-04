@@ -1,4 +1,4 @@
-package com.project.Coffee;
+package com.project.coffee;
 
 
 import java.util.Optional;

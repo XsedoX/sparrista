@@ -1,4 +1,4 @@
-package com.project.DrankCoffee;
+package com.project.drankCoffee;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

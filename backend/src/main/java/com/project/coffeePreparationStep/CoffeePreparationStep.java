@@ -1,4 +1,4 @@
-package com.project.CoffeeIngredient;
+package com.project.coffeePreparationStep;
 
 
 import javax.persistence.Column;
@@ -7,20 +7,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class CoffeeIngredient {
+public class CoffeePreparationStep {
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue
     private Long id;
-
+    private int stepNumber;
     private String description;
-    private String unitOfMeasure;
-    private int amount;
 
-    public CoffeeIngredient() {
+    public CoffeePreparationStep() {
     }
 
+    public int getStepNumber() {
+        return stepNumber;
+    }
 
+    public void setStepNumber(int stepNumber) {
+        this.stepNumber = stepNumber;
+    }
 
     public String getDescription() {
         return description;
@@ -28,22 +32,6 @@ public class CoffeeIngredient {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getUnitOfMeasure() {
-        return unitOfMeasure;
-    }
-
-    public void setUnitOfMeasure(String unitOfMeasure) {
-        this.unitOfMeasure = unitOfMeasure;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
     }
 
     public Long getId() {

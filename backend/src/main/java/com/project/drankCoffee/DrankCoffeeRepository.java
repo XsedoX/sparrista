@@ -1,4 +1,4 @@
-package com.project.DrankCoffee;
+package com.project.drankCoffee;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

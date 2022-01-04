@@ -1,4 +1,4 @@
-package com.project.CoffeeIngredient;
+package com.project.coffeeIngredient;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

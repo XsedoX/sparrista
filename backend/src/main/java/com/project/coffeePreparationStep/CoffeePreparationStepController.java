@@ -1,4 +1,4 @@
-package com.project.DrankCoffee;
+package com.project.coffeePreparationStep;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1")
-public class DrankCoffeeController {
+public class CoffeePreparationStepController {
 
     @Autowired
-    private DrankCoffeeServiceImpl drankCoffeeService;
+    private CoffeePreparationStepService coffeePreparationStepService;
 }

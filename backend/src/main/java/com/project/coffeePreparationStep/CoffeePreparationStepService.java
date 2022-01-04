@@ -1,4 +1,4 @@
-package com.project.CoffeePreparationStep;
+package com.project.coffeePreparationStep;
 
 public interface CoffeePreparationStepService {
 }
