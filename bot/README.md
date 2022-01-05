@@ -25,7 +25,7 @@ $ pip install -r requirements.txt
 
 Stwórz i [dodaj bota na serwer discord](https://youtu.be/SPTfmiYiuok?t=80).
 
-Następnie utwórz plik .env i ustaw poniższe zmienne środowiskowe:
+Następnie zedytuj utworzony już plik .env i uzupełnij poniższe zmienne środowiskowe własnymi tokenami:
 
 ```
 MONGO_URI=<connectiong_string_do_mongodb>
