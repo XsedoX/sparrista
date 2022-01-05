@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Author</th>
+        <th>Nickname</th>
+        <th>Channel</th>
+        <th>Content</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#data').DataTable({
+        ajax: '/api/data',
+        columns: [
+          {data: 'author', searchable: false},
+          {data: 'nickname', searchable: false},
+          {data: 'channel', searchable: false},
+          {data: 'content', orderable: false},
+          {data: 'date', searchable: false}
+        ],
+      });
+    });
+  </script>
+{% endblock %}
