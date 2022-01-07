@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {ImageBackground, View, TouchableOpacity, Text, Image} from "react-native";
 import {styles} from '../Styles/Styles.js'
+import {Karla_400Regular} from "@expo-google-fonts/karla";
 
 export function UserMainInterface({navigation}) {
     return (
@@ -42,7 +43,7 @@ export function UserMainInterface({navigation}) {
                 </View>
                 <View style={{flex:2.1, justifyContent: 'space-between',flexDirection: 'row', marginLeft:140, marginRight:140 }}>
                     <ImageBackground style={{height:300, width: 720, backgroundColor:'#363636', borderRadius: 20, alignItems: 'center'}}>
-                        <Text style={{color:'white', fontSize:50}}>POLECANE</Text>
+                        <Text style={{fontFamily: 'Karla_400Regular',color:'white', fontSize:50}}>POLECANE</Text>
                         <View style={{flexDirection: 'row'}}>
                             <View style={{flexDirection: 'column'}}>
                                 <View style={styles.polecaneSquare}/>

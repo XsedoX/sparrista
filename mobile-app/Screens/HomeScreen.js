@@ -1,7 +1,9 @@
 import * as React from 'react';
 import {ImageBackground, View, TouchableOpacity} from "react-native";
+import axios from "axios";
 
 import {styles} from '../Styles/Styles.js'
+import {Text} from "react-native-web";
 
 export function HomeScreen({ navigation }) {
     return (
