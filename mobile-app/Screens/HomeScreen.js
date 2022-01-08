@@ -22,7 +22,7 @@ export function HomeScreen({ navigation }) {
     useEffect(()=>{
 
         if(doUWantDatabase){
-            axios.get("http://192.168.1.28:8080/api/v1/employees")
+            axios.get("http://192.168.1.28:8080/api/v1/employees")//wpisz swoje wewnetrzne ip(nie moze byc localhost!)
                 .then(res =>{
                     setEmployees(res.data);
                 });
@@ -45,7 +45,7 @@ export function HomeScreen({ navigation }) {
                 <ImageBackground source={require('../assets/Background.png')} resizeMode={"stretch"} style={styles.image}>
                     <View style={{flex: 0.3}} />
                     <View style={styles.flexBox}>
-                        <TouchableOpacity style={{flexDirection: 'column'}} onPress={() => navigation.navigate('UserMainInterface', employees[0])}>
+                        <TouchableOpacity style={styles.userBox} onPress={() => navigation.navigate('UserMainInterface', employees[0])}>
                             <View style={styles.square}>
                                 <Image style={styles.image} source={{uri: employees[0]["avatarUrl"]}}/>
                             </View>
@@ -53,7 +53,7 @@ export function HomeScreen({ navigation }) {
                                 <Text style={styles.interfaceIconsText}>{employees[0]["nickName"]}</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flexDirection: 'column'}} onPress={() => navigation.navigate('UserMainInterface', employees[1])}>
+                        <TouchableOpacity style={styles.userBox} onPress={() => navigation.navigate('UserMainInterface', employees[1])}>
                             <View style={styles.square}>
                                 <Image style={styles.image} source={{uri: employees[1]["avatarUrl"]}}/>
                             </View>
@@ -61,7 +61,7 @@ export function HomeScreen({ navigation }) {
                                 <Text style={styles.interfaceIconsText}>{employees[1]["nickName"]}</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flexDirection: 'column'}} onPress={() => navigation.navigate('UserMainInterface', employees[2])}>
+                        <TouchableOpacity style={styles.userBox} onPress={() => navigation.navigate('UserMainInterface', employees[2])}>
                             <View style={styles.square}>
                                 <Image style={styles.image} source={{uri: employees[2]["avatarUrl"]}}/>
                             </View>
@@ -69,7 +69,7 @@ export function HomeScreen({ navigation }) {
                                 <Text style={styles.interfaceIconsText}>{employees[2]["nickName"]}</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flexDirection: 'column'}} onPress={() => navigation.navigate('UserMainInterface', employees[3])}>
+                        <TouchableOpacity style={styles.userBox} onPress={() => navigation.navigate('UserMainInterface', employees[3])}>
                             <View style={styles.square}>
                                 <Image style={styles.image} source={{uri: employees[3]["avatarUrl"]}}/>
                             </View>
@@ -77,7 +77,7 @@ export function HomeScreen({ navigation }) {
                                 <Text style={styles.interfaceIconsText}>{employees[3]["nickName"]}</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flexDirection: 'column'}} onPress={() => navigation.navigate('UserMainInterface', employees[4])}>
+                        <TouchableOpacity style={styles.userBox} onPress={() => navigation.navigate('UserMainInterface', employees[4])}>
                             <View style={styles.square}>
                                 <Image style={styles.image} source={{uri: employees[4]["avatarUrl"]}}/>
                             </View>
@@ -85,7 +85,7 @@ export function HomeScreen({ navigation }) {
                                 <Text style={styles.interfaceIconsText}>{employees[4]["nickName"]}</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flexDirection: 'column'}} onPress={() => navigation.navigate('UserMainInterface', employees[5])}>
+                        <TouchableOpacity style={styles.userBox} onPress={() => navigation.navigate('UserMainInterface', employees[5])}>
                             <View style={styles.square}>
                                 <Image style={styles.image} source={{uri: employees[5]["avatarUrl"]}}/>
                             </View>
@@ -95,7 +95,7 @@ export function HomeScreen({ navigation }) {
                             </TouchableOpacity>
                     </View>
                     <View style={styles.flexBox}>
-                        <TouchableOpacity style={{flexDirection: 'column'}} onPress={() => navigation.navigate('UserMainInterface', employees[6])}>
+                        <TouchableOpacity style={styles.userBox} onPress={() => navigation.navigate('UserMainInterface', employees[6])}>
                             <View style={styles.square}>
                                 <Image style={styles.image} source={{uri: employees[6]["avatarUrl"]}}/>
                             </View>
@@ -103,7 +103,7 @@ export function HomeScreen({ navigation }) {
                                 <Text style={styles.interfaceIconsText}>{employees[6]["nickName"]}</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flexDirection: 'column'}} onPress={() => navigation.navigate('UserMainInterface', employees[7])}>
+                        <TouchableOpacity style={styles.userBox} onPress={() => navigation.navigate('UserMainInterface', employees[7])}>
                             <View style={styles.square}>
                                 <Image style={styles.image} source={{uri: employees[7]["avatarUrl"]}}/>
                             </View>
@@ -111,7 +111,7 @@ export function HomeScreen({ navigation }) {
                                 <Text style={styles.interfaceIconsText}>{employees[7]["nickName"]}</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flexDirection: 'column'}} onPress={() => navigation.navigate('UserMainInterface', employees[8])}>
+                        <TouchableOpacity style={styles.userBox} onPress={() => navigation.navigate('UserMainInterface', employees[8])}>
                             <View style={styles.square}>
                                 <Image style={styles.image} source={{uri: employees[8]["avatarUrl"]}}/>
                             </View>
@@ -119,7 +119,7 @@ export function HomeScreen({ navigation }) {
                                 <Text style={styles.interfaceIconsText}>{employees[8]["nickName"]}</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flexDirection: 'column'}} onPress={() => navigation.navigate('UserMainInterface', employees[9])}>
+                        <TouchableOpacity style={styles.userBox} onPress={() => navigation.navigate('UserMainInterface', employees[9])}>
                             <View style={styles.square}>
                                 <Image style={styles.image} source={{uri: employees[9]["avatarUrl"]}}/>
                             </View>
@@ -127,7 +127,7 @@ export function HomeScreen({ navigation }) {
                                 <Text style={styles.interfaceIconsText}>{employees[9]["nickName"]}</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flexDirection: 'column'}} onPress={() => navigation.navigate('UserMainInterface', employees[10])}>
+                        <TouchableOpacity style={styles.userBox} onPress={() => navigation.navigate('UserMainInterface', employees[10])}>
                             <View style={styles.square}>
                                 <Image style={styles.image} source={{uri: employees[10]["avatarUrl"]}}/>
                             </View>
@@ -135,7 +135,7 @@ export function HomeScreen({ navigation }) {
                                 <Text style={styles.interfaceIconsText}>{employees[10]["nickName"]}</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flexDirection: 'column'}} onPress={() => navigation.navigate('UserMainInterface', employees[11])}>
+                        <TouchableOpacity style={styles.userBox} onPress={() => navigation.navigate('UserMainInterface', employees[11])}>
                             <View style={styles.square}>
                                 <Image style={styles.image} source={{uri: employees[11]["avatarUrl"]}}/>
                             </View>
@@ -145,7 +145,7 @@ export function HomeScreen({ navigation }) {
                         </TouchableOpacity>
                     </View>
                     <View style={styles.flexBox}>
-                        <TouchableOpacity style={{flexDirection: 'column'}} onPress={() => navigation.navigate('UserMainInterface', employees[12])}>
+                        <TouchableOpacity style={styles.userBox} onPress={() => navigation.navigate('UserMainInterface', employees[12])}>
                             <View style={styles.square}>
                                 <Image style={styles.image} source={{uri: employees[12]["avatarUrl"]}}/>
                             </View>
@@ -153,7 +153,7 @@ export function HomeScreen({ navigation }) {
                                 <Text style={styles.interfaceIconsText}>{employees[12]["nickName"]}</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flexDirection: 'column'}} onPress={() => navigation.navigate('UserMainInterface', employees[13])}>
+                        <TouchableOpacity style={styles.userBox} onPress={() => navigation.navigate('UserMainInterface', employees[13])}>
                             <View style={styles.square}>
                                 <Image style={styles.image} source={{uri: employees[13]["avatarUrl"]}}/>
                             </View>
@@ -161,7 +161,7 @@ export function HomeScreen({ navigation }) {
                                 <Text style={styles.interfaceIconsText}>{employees[13]["nickName"]}</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flexDirection: 'column'}} onPress={() => navigation.navigate('UserMainInterface', employees[14])}>
+                        <TouchableOpacity style={styles.userBox} onPress={() => navigation.navigate('UserMainInterface', employees[14])}>
                             <View style={styles.square}>
                                 <Image style={styles.image} source={{uri: employees[14]["avatarUrl"]}}/>
                             </View>
@@ -169,7 +169,7 @@ export function HomeScreen({ navigation }) {
                                 <Text style={styles.interfaceIconsText}>{employees[14]["nickName"]}</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flexDirection: 'column'}} onPress={() => navigation.navigate('UserMainInterface', employees[15])}>
+                        <TouchableOpacity style={styles.userBox} onPress={() => navigation.navigate('UserMainInterface', employees[15])}>
                             <View style={styles.square}>
                                 <Image style={styles.image} source={{uri: employees[15]["avatarUrl"]}}/>
                             </View>
@@ -177,7 +177,7 @@ export function HomeScreen({ navigation }) {
                                 <Text style={styles.interfaceIconsText}>{employees[15]["nickName"]}</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flexDirection: 'column'}} onPress={() => navigation.navigate('UserMainInterface', employees[16])}>
+                        <TouchableOpacity style={styles.userBox} onPress={() => navigation.navigate('UserMainInterface', employees[16])}>
                             <View style={styles.square}>
                                 <Image style={styles.image} source={{uri: employees[16]["avatarUrl"]}}/>
                             </View>
@@ -185,7 +185,7 @@ export function HomeScreen({ navigation }) {
                                 <Text style={styles.interfaceIconsText}>{employees[16]["nickName"]}</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flexDirection: 'column'}} onPress={() => navigation.navigate('UserMainInterface', guest)}>
+                        <TouchableOpacity style={styles.userBox} onPress={() => navigation.navigate('UserMainInterface', guest)}>
                             <View style={styles.square}>
                                 <Image style={styles.image} source={{uri: guest["avatarUrl"]}}/>
                             </View>
@@ -194,7 +194,7 @@ export function HomeScreen({ navigation }) {
                             </View>
                         </TouchableOpacity>
                     </View>
-                    <View style={{flex: 2}} />
+                    <View style={{flex: 1.3}} />
                 </ImageBackground>
             </View>
         );
