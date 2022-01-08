@@ -17,12 +17,11 @@ export const styles = StyleSheet.create({
     },
     flexBox:
         {
-            flex: 1, justifyContent: 'center',flexDirection: 'row', padding:40, marginRight:40, marginLeft: 40, marginBottom:20
+            flex: 1, justifyContent: 'center',flexDirection: 'row', padding:15, marginRight: 40, marginLeft: 40
         },
     square:
         {
-            height: 135,
-            width: 155,
+            flex:20,
             backgroundColor: '#9f6f4c',
             borderTopLeftRadius: 5,
             borderTopRightRadius: 5,
@@ -31,8 +30,7 @@ export const styles = StyleSheet.create({
         },
     rectangle:
         {
-            height: 35,
-            width: 155,
+            flex:5,
             backgroundColor: '#212121',
             marginLeft: 15,
             marginRight: 20,
@@ -84,7 +82,10 @@ export const styles = StyleSheet.create({
             color:'white',
             fontSize: 20,
             bottom: 2
+        },
+    userBox:
+        {
+            flexDirection: 'column',
+            flex: 1
         }
-
-
 });
