@@ -1,5 +1,6 @@
 import {StyleSheet} from "react-native";
 
+
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -49,6 +50,7 @@ export const styles = StyleSheet.create({
         },
     interfaceIconsText:
         {
+            fontFamily: 'Karla_400Regular',
             position:'absolute',
             bottom: 0.5,
             color:'white',
@@ -78,6 +80,7 @@ export const styles = StyleSheet.create({
         },
     polecaneRectangleText:
         {
+            fontFamily: 'Karla_400Regular',
             color:'white',
             fontSize: 20,
             bottom: 2

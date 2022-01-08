@@ -1,20 +1,25 @@
 import * as React from 'react';
 import {ImageBackground, View, TouchableOpacity, Text, Image} from "react-native";
 import {styles} from '../Styles/Styles.js'
+import AppLoading from "expo-app-loading";
 
-export function UserMainInterface({navigation}) {
+export function UserMainInterface({navigation, route}) {
+    const currentUser = route.params;
+
+    if(typeof currentUser=='undefined')
+        return <AppLoading/>
     return (
         <View style={styles.container}>
             <ImageBackground source={require('../assets/Background.png')} resizeMode={"stretch"} style={styles.image}>
                 <View style={{flex:0.9}}>
                     <View style={{flexDirection: 'row', justifyContent: 'space-between', padding:40}}>
                         <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}>
-                            <Image style={{height:52, width:90, marginTop: 20}}source={require('../assets/BackArrow.png')}/>
+                            <Image style={{height:52, width:90, marginTop: 20}} source={require('../assets/BackArrow.png')}/>
                         </TouchableOpacity>
                         <View style={{flexDirection: 'column', alignItems: 'center'}}>
-                            <View style={{height: 80,width: 90,backgroundColor: '#9f6f4c', borderTopLeftRadius: 5, borderTopRightRadius: 5,}}/>
+                            <Image style={{height: 80,width: 90,backgroundColor: '#9f6f4c', borderTopLeftRadius: 5, borderTopRightRadius: 5,}} source={{uri: currentUser["avatarUrl"]}}/>
                             <View style={{height: 5,width: 90,backgroundColor: '#212121', borderBottomLeftRadius: 5, borderBottomRightRadius: 5,}}/>
-                            <Text style={{fontWeight: "bold", fontSize: 19}}>NAME</Text>
+                            <Text style={{fontWeight: "bold", fontSize: 19}}>{currentUser["nickName"]}</Text>
                         </View>
                     </View>
                 </View>
@@ -42,7 +47,7 @@ export function UserMainInterface({navigation}) {
                 </View>
                 <View style={{flex:2.1, justifyContent: 'space-between',flexDirection: 'row', marginLeft:140, marginRight:140 }}>
                     <ImageBackground style={{height:300, width: 720, backgroundColor:'#363636', borderRadius: 20, alignItems: 'center'}}>
-                        <Text style={{color:'white', fontSize:50}}>POLECANE</Text>
+                        <Text style={{fontFamily: 'Karla_400Regular',color:'white', fontSize:50}}>POLECANE</Text>
                         <View style={{flexDirection: 'row'}}>
                             <View style={{flexDirection: 'column'}}>
                                 <View style={styles.polecaneSquare}/>
