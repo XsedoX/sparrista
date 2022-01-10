@@ -15,6 +15,7 @@ mongoengine==0.23.1
 multidict==5.2.0
 pycodestyle==2.8.0
 pymongo==3.12.3
+python-dotenv==0.19.2
 toml==0.10.2
 typing-extensions==4.0.1
 Werkzeug==2.0.2
