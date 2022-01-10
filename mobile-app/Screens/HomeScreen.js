@@ -7,13 +7,13 @@ import AppLoading from "expo-app-loading";
 
 export function HomeScreen({ navigation }) {
     const [employees, setEmployees] = useState();
-    const doUWantDatabase = false;//ustaw na false i nie potrzebujesz bazy do dzialania apki, tylko niestety wszyscy uzytkownicy beda guestami
+    const doUWantDatabase = true;//ustaw na false i nie potrzebujesz bazy do dzialania apki, tylko niestety wszyscy uzytkownicy beda guestami
     const guest = {
         "id": 1,
         "firstName": "Guest",
         "lastName": "Guest",
         "nickName": "Guest",
-        "avatarUrl": "https://cdn.discordapp.com/attachments/918201805819752510/927881002926366780/received_1061919791293716.webp",
+        "avatarUrl": "https://pics.freeicons.io/uploads/icons/png/7287311761535956910-512.png",
         "drankCoffees": [],
         "postCoffeeSurveys": [],
         "guest": true
