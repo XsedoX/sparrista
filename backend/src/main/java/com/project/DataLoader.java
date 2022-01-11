@@ -5,6 +5,9 @@ import com.project.coffee.CoffeePreparationDifficulty;
 import com.project.coffee.CoffeeServiceImpl;
 import com.project.employee.Employee;
 import com.project.employee.EmployeeRepository;
+import com.project.postCoffeeSurvey.PostCoffeeSurvey;
+import com.project.postCoffeeSurvey.PostCoffeeSurveyRepository;
+import com.project.postCoffeeSurvey.SurveyResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -19,12 +22,18 @@ public class DataLoader implements ApplicationRunner {
     private CoffeeServiceImpl coffeeService;
 
     @Autowired
+    private PostCoffeeSurveyRepository postCoffeeSurveyRepository;
+
+    @Autowired
     public DataLoader(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
 
     public void run(ApplicationArguments args) {
-        employeeRepository.save(new Employee("Lela", "Burton", "BeardDemon", "https://picsum.photos/200/300"));
+        Employee e1 = new Employee("Lela", "Burton", "BeardDemon", "https://picsum.photos/200/300");
+        Employee e2 = new Employee("Ruben", "Edwards", "KookSpook", "https://picsum.photos/200/300");
+        employeeRepository.save(e1);
+        employeeRepository.save(e2);
         employeeRepository.save(new Employee("Ruben", "Edwards", "KookSpook", "https://picsum.photos/200/300"));
         employeeRepository.save(new Employee("Madeline", "Coleman", "Pharos", "https://picsum.photos/200/300"));
         employeeRepository.save(new Employee("Tracy", "Oliver", "Daybreak", "https://picsum.photos/200/300"));
@@ -49,6 +58,25 @@ public class DataLoader implements ApplicationRunner {
         coffee = new Coffee("dawawaw", "cos tam", "dawda", "dawda", CoffeePreparationDifficulty.EASY, 3);
         coffee.setPopularity(1);
         coffeeService.save(coffee);
+
+        PostCoffeeSurvey s1 = new PostCoffeeSurvey();
+        s1.setEmployee(e1);
+        s1.setSurveyResult(SurveyResult.HAPPY);
+        PostCoffeeSurvey s2 = new PostCoffeeSurvey();
+        s2.setEmployee(e1);
+        s2.setSurveyResult(SurveyResult.HAPPY);
+        PostCoffeeSurvey s3 = new PostCoffeeSurvey();
+        s3.setEmployee(e2);
+        s3.setSurveyResult(SurveyResult.NEUTRAL);
+        PostCoffeeSurvey s4 = new PostCoffeeSurvey();
+        s4.setEmployee(e2);
+        s4.setSurveyResult(SurveyResult.SAD);
+
+        postCoffeeSurveyRepository.save(s1);
+        postCoffeeSurveyRepository.save(s2);
+        postCoffeeSurveyRepository.save(s3);
+        postCoffeeSurveyRepository.save(s4);
+
 
     }
 }
