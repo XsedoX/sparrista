@@ -32,7 +32,7 @@ export function AfterCoffeeScreen({ navigation, route }) {
         >
           <View
             style={{
-              flex: 1,
+              flex: .5,
             }}
           >
             <Text
@@ -50,7 +50,7 @@ export function AfterCoffeeScreen({ navigation, route }) {
             style={{
               flex: 1,
               flexDirection: "row",
-              justifyContent: "space-evenly",
+              justifyContent: "space-evenly"
             }}
           >
             <TouchableOpacity
