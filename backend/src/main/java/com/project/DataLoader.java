@@ -5,10 +5,16 @@ import com.project.coffee.CoffeePreparationDifficulty;
 import com.project.coffee.CoffeeServiceImpl;
 import com.project.employee.Employee;
 import com.project.employee.EmployeeRepository;
+import com.project.postCoffeeSurvey.PostCoffeeSurvey;
+import com.project.postCoffeeSurvey.PostCoffeeSurveyRepository;
+import com.project.postCoffeeSurvey.SurveyResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 @Component
 public class DataLoader implements ApplicationRunner {
@@ -19,12 +25,18 @@ public class DataLoader implements ApplicationRunner {
     private CoffeeServiceImpl coffeeService;
 
     @Autowired
+    private PostCoffeeSurveyRepository postCoffeeSurveyRepository;
+
+    @Autowired
     public DataLoader(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
 
     public void run(ApplicationArguments args) {
-        employeeRepository.save(new Employee("Lela", "Burton", "BeardDemon", "https://picsum.photos/200/300"));
+        Employee e1 = new Employee("Lela", "Burton", "BeardDemon", "https://picsum.photos/200/300");
+        Employee e2 = new Employee("Ruben", "Edwards", "KookSpook", "https://picsum.photos/200/300");
+        employeeRepository.save(e1);
+        employeeRepository.save(e2);
         employeeRepository.save(new Employee("Ruben", "Edwards", "KookSpook", "https://picsum.photos/200/300"));
         employeeRepository.save(new Employee("Madeline", "Coleman", "Pharos", "https://picsum.photos/200/300"));
         employeeRepository.save(new Employee("Tracy", "Oliver", "Daybreak", "https://picsum.photos/200/300"));
@@ -49,6 +61,12 @@ public class DataLoader implements ApplicationRunner {
         coffee = new Coffee("dawawaw", "cos tam", "dawda", "dawda", CoffeePreparationDifficulty.EASY, 3);
         coffee.setPopularity(1);
         coffeeService.save(coffee);
+
+        postCoffeeSurveyRepository.save(new PostCoffeeSurvey(SurveyResult.HAPPY, ZonedDateTime.now() ,e1 , coffee));
+        postCoffeeSurveyRepository.save(new PostCoffeeSurvey(SurveyResult.NEUTRAL, ZonedDateTime.now() ,e2 , coffee));
+        postCoffeeSurveyRepository.save(new PostCoffeeSurvey(SurveyResult.HAPPY, ZonedDateTime.now() ,e1 , coffee));
+        postCoffeeSurveyRepository.save(new PostCoffeeSurvey(SurveyResult.SAD, ZonedDateTime.now() ,e2 , coffee));
+
 
     }
 }
