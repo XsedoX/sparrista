@@ -274,7 +274,7 @@ export function HomeScreen({ navigation }) {
             <TouchableOpacity
               style={styles.userBox}
               onPress={() =>
-                navigation.navigate("UserMainInterface", employees[0])
+                navigation.navigate("UserMainInterface", { user: employees[0] })
               }
             >
               <View style={styles.square}>
@@ -292,7 +292,7 @@ export function HomeScreen({ navigation }) {
             <TouchableOpacity
               style={styles.userBox}
               onPress={() =>
-                navigation.navigate("UserMainInterface", employees[1])
+                navigation.navigate("UserMainInterface", { user: employees[1] })
               }
             >
               <View style={styles.square}>
@@ -310,7 +310,7 @@ export function HomeScreen({ navigation }) {
             <TouchableOpacity
               style={styles.userBox}
               onPress={() =>
-                navigation.navigate("UserMainInterface", employees[2])
+                navigation.navigate("UserMainInterface", { user: employees[2] })
               }
             >
               <View style={styles.square}>
@@ -328,7 +328,7 @@ export function HomeScreen({ navigation }) {
             <TouchableOpacity
               style={styles.userBox}
               onPress={() =>
-                navigation.navigate("UserMainInterface", employees[3])
+                navigation.navigate("UserMainInterface", { user: employees[3] })
               }
             >
               <View style={styles.square}>
@@ -346,7 +346,7 @@ export function HomeScreen({ navigation }) {
             <TouchableOpacity
               style={styles.userBox}
               onPress={() =>
-                navigation.navigate("UserMainInterface", employees[4])
+                navigation.navigate("UserMainInterface", { user: employees[4] })
               }
             >
               <View style={styles.square}>
@@ -364,7 +364,7 @@ export function HomeScreen({ navigation }) {
             <TouchableOpacity
               style={styles.userBox}
               onPress={() =>
-                navigation.navigate("UserMainInterface", employees[5])
+                navigation.navigate("UserMainInterface", { user: employees[5] })
               }
             >
               <View style={styles.square}>
@@ -384,7 +384,7 @@ export function HomeScreen({ navigation }) {
             <TouchableOpacity
               style={styles.userBox}
               onPress={() =>
-                navigation.navigate("UserMainInterface", employees[6])
+                navigation.navigate("UserMainInterface", { user: employees[6] })
               }
             >
               <View style={styles.square}>
@@ -402,7 +402,7 @@ export function HomeScreen({ navigation }) {
             <TouchableOpacity
               style={styles.userBox}
               onPress={() =>
-                navigation.navigate("UserMainInterface", employees[7])
+                navigation.navigate("UserMainInterface", { user: employees[7] })
               }
             >
               <View style={styles.square}>
@@ -420,7 +420,7 @@ export function HomeScreen({ navigation }) {
             <TouchableOpacity
               style={styles.userBox}
               onPress={() =>
-                navigation.navigate("UserMainInterface", employees[8])
+                navigation.navigate("UserMainInterface", { user: employees[8] })
               }
             >
               <View style={styles.square}>
@@ -438,7 +438,7 @@ export function HomeScreen({ navigation }) {
             <TouchableOpacity
               style={styles.userBox}
               onPress={() =>
-                navigation.navigate("UserMainInterface", employees[9])
+                navigation.navigate("UserMainInterface", { user: employees[9] })
               }
             >
               <View style={styles.square}>
@@ -456,7 +456,9 @@ export function HomeScreen({ navigation }) {
             <TouchableOpacity
               style={styles.userBox}
               onPress={() =>
-                navigation.navigate("UserMainInterface", employees[10])
+                navigation.navigate("UserMainInterface", {
+                  user: employees[10],
+                })
               }
             >
               <View style={styles.square}>
@@ -474,7 +476,9 @@ export function HomeScreen({ navigation }) {
             <TouchableOpacity
               style={styles.userBox}
               onPress={() =>
-                navigation.navigate("UserMainInterface", employees[11])
+                navigation.navigate("UserMainInterface", {
+                  user: employees[11],
+                })
               }
             >
               <View style={styles.square}>
@@ -494,7 +498,9 @@ export function HomeScreen({ navigation }) {
             <TouchableOpacity
               style={styles.userBox}
               onPress={() =>
-                navigation.navigate("UserMainInterface", employees[12])
+                navigation.navigate("UserMainInterface", {
+                  user: employees[12],
+                })
               }
             >
               <View style={styles.square}>
@@ -512,7 +518,9 @@ export function HomeScreen({ navigation }) {
             <TouchableOpacity
               style={styles.userBox}
               onPress={() =>
-                navigation.navigate("UserMainInterface", employees[13])
+                navigation.navigate("UserMainInterface", {
+                  user: employees[13],
+                })
               }
             >
               <View style={styles.square}>
@@ -530,7 +538,9 @@ export function HomeScreen({ navigation }) {
             <TouchableOpacity
               style={styles.userBox}
               onPress={() =>
-                navigation.navigate("UserMainInterface", employees[14])
+                navigation.navigate("UserMainInterface", {
+                  user: employees[14],
+                })
               }
             >
               <View style={styles.square}>
@@ -548,7 +558,9 @@ export function HomeScreen({ navigation }) {
             <TouchableOpacity
               style={styles.userBox}
               onPress={() =>
-                navigation.navigate("UserMainInterface", employees[15])
+                navigation.navigate("UserMainInterface", {
+                  user: employees[15],
+                })
               }
             >
               <View style={styles.square}>
@@ -566,7 +578,9 @@ export function HomeScreen({ navigation }) {
             <TouchableOpacity
               style={styles.userBox}
               onPress={() =>
-                navigation.navigate("UserMainInterface", employees[16])
+                navigation.navigate("UserMainInterface", {
+                  user: employees[16],
+                })
               }
             >
               <View style={styles.square}>
@@ -583,7 +597,9 @@ export function HomeScreen({ navigation }) {
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.userBox}
-              onPress={() => navigation.navigate("UserMainInterface", guest)}
+              onPress={() =>
+                navigation.navigate("UserMainInterface", { user: guest })
+              }
             >
               <View style={styles.square}>
                 <Image
