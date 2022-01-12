@@ -43,14 +43,6 @@ public class Employee {
         this.drankCoffees = drankCoffees;
     }
 
-//    public Set<PostCoffeeSurvey> getPostCoffeeSurveys() {
-//        return postCoffeeSurveys;
-//    }
-//
-//    public void setPostCoffeeSurveys(Set<PostCoffeeSurvey> postCoffeeSurveys) {
-//        this.postCoffeeSurveys = postCoffeeSurveys;
-//    }
-
     public Long getId() {
         return id;
     }

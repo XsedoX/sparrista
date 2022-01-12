@@ -14,10 +14,7 @@ public class PostCoffeeSurveyController {
     @Autowired
     private PostCoffeeSurveyServiceImpl postCoffeeSurveyService;
 
-    @Autowired
-    Mapper mapper;
-
-    @PostMapping(value = "/users/{id}/post-coffee-survey")
+    @PostMapping(value = "/employees/{id}/post-coffee-survey")
     public ResponseEntity<PostCoffeeSurvey> create(@PathVariable Long user_id, @RequestBody PostCoffeeSurvey postCoffeeSurvey) {
         return ResponseEntity.ok().body(postCoffeeSurvey);
     }

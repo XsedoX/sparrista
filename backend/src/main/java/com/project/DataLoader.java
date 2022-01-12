@@ -13,6 +13,9 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
+
 @Component
 public class DataLoader implements ApplicationRunner {
 
@@ -59,23 +62,10 @@ public class DataLoader implements ApplicationRunner {
         coffee.setPopularity(1);
         coffeeService.save(coffee);
 
-        PostCoffeeSurvey s1 = new PostCoffeeSurvey();
-        s1.setEmployee(e1);
-        s1.setSurveyResult(SurveyResult.HAPPY);
-        PostCoffeeSurvey s2 = new PostCoffeeSurvey();
-        s2.setEmployee(e1);
-        s2.setSurveyResult(SurveyResult.HAPPY);
-        PostCoffeeSurvey s3 = new PostCoffeeSurvey();
-        s3.setEmployee(e2);
-        s3.setSurveyResult(SurveyResult.NEUTRAL);
-        PostCoffeeSurvey s4 = new PostCoffeeSurvey();
-        s4.setEmployee(e2);
-        s4.setSurveyResult(SurveyResult.SAD);
-
-        postCoffeeSurveyRepository.save(s1);
-        postCoffeeSurveyRepository.save(s2);
-        postCoffeeSurveyRepository.save(s3);
-        postCoffeeSurveyRepository.save(s4);
+        postCoffeeSurveyRepository.save(new PostCoffeeSurvey(SurveyResult.HAPPY, ZonedDateTime.now() ,e1 , coffee));
+        postCoffeeSurveyRepository.save(new PostCoffeeSurvey(SurveyResult.NEUTRAL, ZonedDateTime.now() ,e2 , coffee));
+        postCoffeeSurveyRepository.save(new PostCoffeeSurvey(SurveyResult.HAPPY, ZonedDateTime.now() ,e1 , coffee));
+        postCoffeeSurveyRepository.save(new PostCoffeeSurvey(SurveyResult.SAD, ZonedDateTime.now() ,e2 , coffee));
 
 
     }

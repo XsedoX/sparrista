@@ -13,7 +13,7 @@ public class EmployeeServiceImpl implements EmployeeService{
     private EmployeeRepository employeeRepository;
 
     @Override
-    public Optional<Employee> GetCoffeeById(Long id) {
+    public Optional<Employee> GetEmployeeById(Long id) {
         return employeeRepository.findById(id);
     }
 
