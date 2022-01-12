@@ -55,10 +55,23 @@ public class DataLoader implements ApplicationRunner {
         employeeRepository.save(new Employee("Mabel", "Castro", "BatBoy", "https://picsum.photos/200/300"));
 
 
-        Coffee coffee = new Coffee("nowa", "cos tam", "dawda", "dawda", CoffeePreparationDifficulty.EASY, 3);
+        Coffee coffee = new Coffee("Americano", "Prawdopodobnie kawa taka powstała we Włoszech w czasie II wojny światowej, kiedy to żołnierze z USA żądali dolewania wody do espresso, tak aby otrzymać kawę podobną do tej, jaką pili w domach", "Krok 1: xxx \nKrok 2: xxx \nKrok 3: xxx", "dawda", CoffeePreparationDifficulty.EASY, 3);
         coffee.setPopularity(5);
         coffeeService.save(coffee);
-        coffee = new Coffee("dawawaw", "cos tam", "dawda", "dawda", CoffeePreparationDifficulty.EASY, 3);
+
+        coffee = new Coffee("Espresso", "Powstaje przez przez przepuszczenie 25-35 ml gorącej (90,5-96 °C) wody pod ciśnieniem 8,5-9,5 bara przez bardzo drobno zmielone i ubite ziarna kawowca", "Krok 1: xxx \nKrok 2: xxx \nKrok 3: xxx", "dawda", CoffeePreparationDifficulty.EASY, 1);
+        coffee.setPopularity(4);
+        coffeeService.save(coffee);
+
+        coffee = new Coffee("Flat White", "W odróżnieniu od caffe latte jest zazwyczaj podawane w kubku lub dużej filiżance i ma na wierzchu mniej piany z mleka (która na caffè latte tworzy wyraźną osobną warstwę)", "Krok 1: xxx \nKrok 2: xxx \nKrok 3: xxx", "dawda", CoffeePreparationDifficulty.EASY, 5);
+        coffee.setPopularity(3);
+        coffeeService.save(coffee);
+
+        coffee = new Coffee("Cappuccino", "Włoski napój kawowy z dodatkiem spienionego mleka (rzadziej z bitą śmietaną) i szczyptą sypkiej czekolady lub kakao dla ozdoby", "Krok 1: xxx \nKrok 2: xxx \nKrok 3: xxx", "dawda", CoffeePreparationDifficulty.EASY, 4);
+        coffee.setPopularity(2);
+        coffeeService.save(coffee);
+
+        coffee = new Coffee("Caffe Latte", "Wbrew nazwie, latte art (sztuka wykonywania rysunków i wzorów na powierzchni kawy), na tradycyjnej latte nie wykonuje się ozdób na piance", "Krok 1: xxx \nKrok 2: xxx \nKrok 3: xxx", "dawda", CoffeePreparationDifficulty.EASY, 4);
         coffee.setPopularity(1);
         coffeeService.save(coffee);
 
@@ -66,7 +79,5 @@ public class DataLoader implements ApplicationRunner {
         postCoffeeSurveyRepository.save(new PostCoffeeSurvey(SurveyResult.NEUTRAL, ZonedDateTime.now() ,e2 , coffee));
         postCoffeeSurveyRepository.save(new PostCoffeeSurvey(SurveyResult.HAPPY, ZonedDateTime.now() ,e1 , coffee));
         postCoffeeSurveyRepository.save(new PostCoffeeSurvey(SurveyResult.SAD, ZonedDateTime.now() ,e2 , coffee));
-
-
     }
 }
