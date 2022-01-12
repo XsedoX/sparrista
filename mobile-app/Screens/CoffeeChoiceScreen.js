@@ -13,12 +13,12 @@ export function CoffeeChoiceScreen({ navigation, route }) {
 
   const coff1 = {
     id: 1,
-    title: "Latte macchiato",
+    title: "Americano",
     coffeeDescription:
-      "Napój mleczny powstały przez powolne (delikatnie, po ściance) dolanie kawy espresso do gorącego mleka, pokrytego warstwą mlecznej piany",
+      "Prawdopodobnie kawa taka powstała we Włoszech w czasie II wojny światowej, kiedy to żołnierze z USA żądali dolewania wody do espresso, tak aby otrzymać kawę podobną do tej, jaką pili w domach",
     preparationDescription: "Krok 1: xxx \nKrok 2: xxx \nKrok 3: xxx",
     photoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Latte_macchiato_with_coffee_beans.jpg/220px-Latte_macchiato_with_coffee_beans.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/A_cup_of_Americano.JPG/179px-A_cup_of_Americano.JPG",
     preparationTime: 0,
     popularity: 0,
   };
@@ -37,9 +37,9 @@ export function CoffeeChoiceScreen({ navigation, route }) {
 
   const coff3 = {
     id: 3,
-    title: "Flat white",
+    title: "Flat White",
     coffeeDescription:
-      "W odróżnieniu od caffè latte jest zazwyczaj podawane w kubku lub dużej filiżance i ma na wierzchu mniej piany z mleka (która na caffè latte tworzy wyraźną osobną warstwę)",
+      "W odróżnieniu od caffe latte jest zazwyczaj podawane w kubku lub dużej filiżance i ma na wierzchu mniej piany z mleka (która na caffè latte tworzy wyraźną osobną warstwę)",
     preparationDescription: "Krok 1: xxx \nKrok 2: xxx \nKrok 3: xxx",
     photoUrl:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Flat_White%2C_New_Zealand.JPG/220px-Flat_White%2C_New_Zealand.JPG",
@@ -61,7 +61,7 @@ export function CoffeeChoiceScreen({ navigation, route }) {
 
   const coff5 = {
     id: 5,
-    title: "Caffè latte",
+    title: "Caffe Latte",
     coffeeDescription:
       "Wbrew nazwie, latte art (sztuka wykonywania rysunków i wzorów na powierzchni kawy), na tradycyjnej latte nie wykonuje się ozdób na piance",
     preparationDescription: "Krok 1: xxx \nKrok 2: xxx \nKrok 3: xxx",
@@ -86,210 +86,125 @@ export function CoffeeChoiceScreen({ navigation, route }) {
           style={{
             flex: 1,
             flexDirection: "column",
+            alignContent: "center",
             alignItems: "center",
             justifyContent: "space-evenly",
           }}
         >
-          <View>
-            <TouchableOpacity
-              onPress={() =>
-                navigation.navigate("CoffeeRecipeScreen", {
-                  user: currentUser,
-                  coffee: coff1,
-                })
-              }
-            >
-              <ImageBackground
-                source={require("../assets/Rectangle.png")}
-                resizeMode={"stretch"}
-                style={{
-                  width: 500,
-                  height: 100,
-                }}
-              >
-                <View
-                  style={{
-                    flex: 1,
-                    flexDirection: "row",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <View>
-                    <Image
-                      style={{ height: 100, width: 100 }}
-                      source={{ uri: coff1.photoUrl }}
-                    />
-                  </View>
-                  <View>
-                    <Text style={{ fontSize: 50, textAlign: "center" }}>
-                      {coff1.title}
-                    </Text>
-                  </View>
-                </View>
-              </ImageBackground>
-            </TouchableOpacity>
+          <View style={{ flex: 0.5 }} />
+          <View style={{ flex: 1 }}>
+            <Text style={{ fontSize: 50, fontWeight: "bold" }}>
+              WYBIERZ KAWĘ KTÓRĄ CHCESZ ZROBIĆ
+            </Text>
           </View>
-          <View>
-            <TouchableOpacity
-              onPress={() =>
-                navigation.navigate("CoffeeRecipeScreen", {
-                  user: currentUser,
-                  coffee: coff2,
-                })
-              }
-            >
-              <ImageBackground
-                source={require("../assets/Rectangle.png")}
-                resizeMode={"stretch"}
-                style={{
-                  width: 500,
-                  height: 100,
-                }}
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              alignContent: "center",
+              alignItems: "center",
+              justifyContent: "space-evenly",
+            }}
+          >
+            <View style={{ flex: 0.5 }} />
+            <View style={{ flex: 1 }}>
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("CoffeeRecipeScreen", {
+                    user: currentUser,
+                    coffee: coff1,
+                  })
+                }
               >
-                <View
+                <Image
+                  source={require("../assets/Americano.png")}
+                  resizeMode={"stretch"}
                   style={{
-                    flex: 1,
-                    flexDirection: "row",
-                    alignItems: "center",
-                    justifyContent: "space-between",
+                    width: 200,
+                    height: 200,
                   }}
-                >
-                  <View>
-                    <Image
-                      style={{ height: 100, width: 100 }}
-                      source={{ uri: coff2.photoUrl }}
-                    />
-                  </View>
-                  <View>
-                    <Text style={{ fontSize: 50, textAlign: "center" }}>
-                      {coff2.title}
-                    </Text>
-                  </View>
-                </View>
-              </ImageBackground>
-            </TouchableOpacity>
-          </View>
-          <View>
-            <TouchableOpacity
-              onPress={() =>
-                navigation.navigate("CoffeeRecipeScreen", {
-                  user: currentUser,
-                  coffee: coff3,
-                })
-              }
-            >
-              <ImageBackground
-                source={require("../assets/Rectangle.png")}
-                resizeMode={"stretch"}
-                style={{
-                  width: 500,
-                  height: 100,
-                }}
+                ></Image>
+              </TouchableOpacity>
+            </View>
+            <View style={{ flex: 1 }}>
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("CoffeeRecipeScreen", {
+                    user: currentUser,
+                    coffee: coff2,
+                  })
+                }
               >
-                <View
+                <Image
+                  source={require("../assets/Espresso.png")}
+                  resizeMode={"stretch"}
                   style={{
-                    flex: 1,
-                    flexDirection: "row",
-                    alignItems: "center",
-                    justifyContent: "space-between",
+                    width: 200,
+                    height: 200,
                   }}
-                >
-                  <View>
-                    <Image
-                      style={{ height: 100, width: 100 }}
-                      source={{ uri: coff3.photoUrl }}
-                    />
-                  </View>
-                  <View>
-                    <Text style={{ fontSize: 50, textAlign: "center" }}>
-                      {coff3.title}
-                    </Text>
-                  </View>
-                </View>
-              </ImageBackground>
-            </TouchableOpacity>
-          </View>
-          <View>
-            <TouchableOpacity
-              onPress={() =>
-                navigation.navigate("CoffeeRecipeScreen", {
-                  user: currentUser,
-                  coffee: coff4,
-                })
-              }
-            >
-              <ImageBackground
-                source={require("../assets/Rectangle.png")}
-                resizeMode={"stretch"}
-                style={{
-                  width: 500,
-                  height: 100,
-                }}
+                ></Image>
+              </TouchableOpacity>
+            </View>
+            <View style={{ flex: 1 }}>
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("CoffeeRecipeScreen", {
+                    user: currentUser,
+                    coffee: coff3,
+                  })
+                }
               >
-                <View
+                <Image
+                  source={require("../assets/FlatWhite.png")}
+                  resizeMode={"stretch"}
                   style={{
-                    flex: 1,
-                    flexDirection: "row",
-                    alignItems: "center",
-                    justifyContent: "space-between",
+                    width: 200,
+                    height: 200,
                   }}
-                >
-                  <View>
-                    <Image
-                      style={{ height: 100, width: 100 }}
-                      source={{ uri: coff4.photoUrl }}
-                    />
-                  </View>
-                  <View>
-                    <Text style={{ fontSize: 50, textAlign: "center" }}>
-                      {coff4.title}
-                    </Text>
-                  </View>
-                </View>
-              </ImageBackground>
-            </TouchableOpacity>
-          </View>
-          <View>
-            <TouchableOpacity
-              onPress={() =>
-                navigation.navigate("CoffeeRecipeScreen", {
-                  user: currentUser,
-                  coffee: coff5,
-                })
-              }
-            >
-              <ImageBackground
-                source={require("../assets/Rectangle.png")}
-                resizeMode={"stretch"}
-                style={{
-                  width: 500,
-                  height: 100,
-                }}
+                ></Image>
+              </TouchableOpacity>
+            </View>
+            <View style={{ flex: 1 }}>
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("CoffeeRecipeScreen", {
+                    user: currentUser,
+                    coffee: coff4,
+                  })
+                }
               >
-                <View
+                <Image
+                  source={require("../assets/Cappuccino.png")}
+                  resizeMode={"stretch"}
                   style={{
-                    flex: 1,
-                    flexDirection: "row",
-                    alignItems: "center",
-                    justifyContent: "space-between",
+                    width: 200,
+                    height: 200,
                   }}
-                >
-                  <View>
-                    <Image
-                      style={{ height: 100, width: 100 }}
-                      source={{ uri: coff5.photoUrl }}
-                    />
-                  </View>
-                  <View>
-                    <Text style={{ fontSize: 50, textAlign: "center" }}>
-                      {coff5.title}
-                    </Text>
-                  </View>
-                </View>
-              </ImageBackground>
-            </TouchableOpacity>
+                ></Image>
+              </TouchableOpacity>
+            </View>
+            <View style={{ flex: 1 }}>
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("CoffeeRecipeScreen", {
+                    user: currentUser,
+                    coffee: coff5,
+                  })
+                }
+              >
+                <Image
+                  source={require("../assets/CaffeLatte.png")}
+                  resizeMode={"stretch"}
+                  style={{
+                    width: 200,
+                    height: 200,
+                  }}
+                ></Image>
+              </TouchableOpacity>
+            </View>
+            <View style={{ flex: 0.5 }} />
           </View>
+          <View style={{ flex: 0.5 }} />
         </View>
       </ImageBackground>
     </View>
