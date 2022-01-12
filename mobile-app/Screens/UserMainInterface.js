@@ -10,7 +10,7 @@ import { styles } from "../Styles/Styles.js";
 import AppLoading from "expo-app-loading";
 
 export function UserMainInterface({ navigation, route }) {
-  const currentUser = route.params;
+  const currentUser = route.params.user;
 
   if (typeof currentUser == "undefined") return <AppLoading />;
   return (
@@ -70,7 +70,7 @@ export function UserMainInterface({ navigation, route }) {
         >
           <TouchableOpacity
             onPress={() =>
-              navigation.navigate("AfterCoffeeScreen", currentUser)
+              navigation.navigate("CoffeeChoiceScreen", { user: currentUser })
             }
           >
             <ImageBackground
