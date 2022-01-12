@@ -8,6 +8,23 @@ import {
 } from "react-native";
 import AppLoading from "expo-app-loading";
 
+function coffeeSwitch(title) {
+  switch (title) {
+    case "Americano":
+      return require("../assets/AmericanoCup.png");
+    case "Caffe Latte":
+      return require("../assets/CaffeLatteCup.png");
+    case "Cappuccino":
+      return require("../assets/CappuccinoCup.png");
+    case "Espresso":
+      return require("../assets/EspressoCup.png");
+    case "Flat White":
+      return require("../assets/FlatWhiteCup.png");
+    default:
+      return require("../assets/AmericanoCup.png");
+  }
+}
+
 export function CoffeeRecipeScreen({ navigation, route }) {
   const currentUser = route.params.user;
   const currentCoffee = route.params.coffee;
@@ -43,8 +60,8 @@ export function CoffeeRecipeScreen({ navigation, route }) {
           >
             <View style={{ flex: 1 }}>
               <Image
-                style={{ height: 100, width: 100 }}
-                source={{ uri: currentCoffee.photoUrl }}
+                style={{ height: 100, width: 100, resizeMode: "stretch" }}
+                source={coffeeSwitch(currentCoffee.title)}
               />
             </View>
             <View style={{ flex: 1 }}>
