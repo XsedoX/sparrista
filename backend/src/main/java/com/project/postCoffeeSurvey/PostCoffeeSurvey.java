@@ -16,6 +16,13 @@ public class PostCoffeeSurvey {
     private SurveyResult surveyResult;
     private ZonedDateTime submittedAt;
 
+    public PostCoffeeSurvey(SurveyResult surveyResult, ZonedDateTime submittedAt, Employee employee, Coffee coffee) {
+        this.surveyResult = surveyResult;
+        this.submittedAt = submittedAt;
+        this.employee = employee;
+        this.coffee = coffee;
+    }
+
     @ManyToOne
     @JoinColumn(name = "employee_id")
     private Employee employee;

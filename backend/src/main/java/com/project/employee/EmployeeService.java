@@ -4,6 +4,6 @@ import java.util.Optional;
 
 public interface EmployeeService {
 
-    Optional<Employee> GetCoffeeById(Long id);
+    Optional<Employee> GetEmployeeById(Long id);
     Iterable<Employee> listAllEmployees();
 }

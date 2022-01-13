@@ -6,9 +6,13 @@ import {
   Text,
   Image,
 } from "react-native";
+import AppLoading from "expo-app-loading";
 
 export function AfterCoffeeScreen({ navigation, route }) {
-  const currentUser = route.params;
+  const currentUser = route.params.user;
+  const currentCoffee = route.params.coffee;
+
+  if (typeof currentUser == "undefined") return <AppLoading />;
   return (
     <View>
       <ImageBackground
@@ -28,7 +32,7 @@ export function AfterCoffeeScreen({ navigation, route }) {
         >
           <View
             style={{
-              flex: 1,
+              flex: .5,
             }}
           >
             <Text
@@ -46,12 +50,12 @@ export function AfterCoffeeScreen({ navigation, route }) {
             style={{
               flex: 1,
               flexDirection: "row",
-              justifyContent: "space-evenly",
+              justifyContent: "space-evenly"
             }}
           >
             <TouchableOpacity
               onPress={() =>
-                navigation.navigate("UserMainInterface", currentUser)
+                navigation.navigate("UserMainInterface", { user: currentUser })
               }
             >
               <Image
@@ -61,7 +65,7 @@ export function AfterCoffeeScreen({ navigation, route }) {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() =>
-                navigation.navigate("UserMainInterface", currentUser)
+                navigation.navigate("UserMainInterface", { user: currentUser })
               }
             >
               <Image
@@ -71,7 +75,7 @@ export function AfterCoffeeScreen({ navigation, route }) {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() =>
-                navigation.navigate("UserMainInterface", currentUser)
+                navigation.navigate("UserMainInterface", { user: currentUser })
               }
             >
               <Image

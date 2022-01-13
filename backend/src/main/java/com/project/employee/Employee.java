@@ -22,8 +22,8 @@ public class Employee {
     @OneToMany(mappedBy = "employee")
     private Set<DrankCoffee> drankCoffees;
 
-    @OneToMany(mappedBy = "employee")
-    private Set<PostCoffeeSurvey> postCoffeeSurveys;
+//    @OneToMany(mappedBy = "employee")
+//    private Set<PostCoffeeSurvey> postCoffeeSurveys;
 
     public Employee() {}
 
@@ -41,14 +41,6 @@ public class Employee {
 
     public void setDrankCoffees(Set<DrankCoffee> drankCoffees) {
         this.drankCoffees = drankCoffees;
-    }
-
-    public Set<PostCoffeeSurvey> getPostCoffeeSurveys() {
-        return postCoffeeSurveys;
-    }
-
-    public void setPostCoffeeSurveys(Set<PostCoffeeSurvey> postCoffeeSurveys) {
-        this.postCoffeeSurveys = postCoffeeSurveys;
     }
 
     public Long getId() {

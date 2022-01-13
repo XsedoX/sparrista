@@ -36,6 +36,7 @@ export const styles = StyleSheet.create({
             marginRight: 20,
             borderBottomLeftRadius: 5,
             borderBottomRightRadius: 5,
+
         },
     interfaceIcons:
         {
@@ -53,13 +54,17 @@ export const styles = StyleSheet.create({
             bottom: 0.5,
             color:'white',
             fontWeight: "bold",
-            fontSize: 24
+            fontSize: 24,
+            textAlign: 'center',
+            width: 160,
+            textTransform: 'uppercase'
         },
     polecaneSquare:
         {
-            height:190,
-            width:225,
-            backgroundColor:'#9F6F4C',
+            height:220,
+            width:200,
+            resizeMode: "contain",
+            backgroundColor: "#363636",
             borderTopLeftRadius:5,
             borderTopRightRadius:5,
             marginRight:5,
